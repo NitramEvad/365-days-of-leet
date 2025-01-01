@@ -1,1 +1,3 @@
 # 365-days-of-leet
+
+The plans is to complete at least one leetcode daily for 2025. Will see if I end up banking some for holidays and other events...
