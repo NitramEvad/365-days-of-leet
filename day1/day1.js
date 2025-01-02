@@ -4,7 +4,10 @@
 // We will consider a, e, i, o, u as vowels for this Kata (but not y).
 // The input string will only consist of lower case letters and/or spaces.
 
-// tidier regex code:  return (str.match(/[aeiou]/ig)||[]).length;
+// tidier versions
+// return (str.match(/[aeiou]/ig)||[]).length;
+// return str.split('').filter(c => "aeiouAEIOU".includes(c)).length;
+// 
 
 const vowels = ['a', 'e', 'i', 'o', 'u'];
 
