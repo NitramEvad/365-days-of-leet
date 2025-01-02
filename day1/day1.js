@@ -4,6 +4,8 @@
 // We will consider a, e, i, o, u as vowels for this Kata (but not y).
 // The input string will only consist of lower case letters and/or spaces.
 
+// tidier regex code:  return (str.match(/[aeiou]/ig)||[]).length;
+
 const vowels = ['a', 'e', 'i', 'o', 'u'];
 
 const vowelCount = (str) => {
@@ -16,5 +18,4 @@ const vowelCount = (str) => {
     return count
 }
 
-console.log(vowelCount('abcdefghijklm'))
-console.log(vowelCount('a ba ae cdefghijklm'))
+module.exports = vowelCount;
