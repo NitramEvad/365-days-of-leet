@@ -9,6 +9,19 @@
 // o: Output the value to a result array
 // All other instructions are no-ops and have no effect.
 
+// Nice solution
+// function parse( data ) {
+//     const result = [];
+//     const parser = {
+//       'i': (acc) => ++acc,
+//       'd': (acc) => --acc,
+//       's': (acc) => acc ** 2,
+//       'o': (acc) => {result.push(acc); return acc},
+//     };
+//     [...data].reduce((acc,cur) => cur in parser ? parser[curr](acc) : acc , 0);
+//     return result;
+//   }
+
 
 function parse(data) {
     result = []
