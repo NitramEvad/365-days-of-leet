@@ -18,24 +18,11 @@ Note: For 4 or more names, the number in "and 2 others" simply increases.
 
 export const likes = (arr : string[]) : string => {
 
-    let output = '';
-
-    switch (arr.length) {
-        case 0: 
-            output = 'no one';
-            break;
-        case 1: 
-            output = `${arr[0]}`;
-            break;
-        case 2: 
-            output = `${arr[0]} and ${arr[1]}`
-            break;
-        case 3: 
-            output = `${arr[0]}, ${arr[1]} and ${arr[2]}`
-            break;
-        default: 
-            output = `${arr[0]}, ${arr[1]} and ${arr.length-2} others`
+    switch(arr.length) {
+        case 0: return 'no one likes this';
+        case 1: return `${arr[0]} likes this`;
+        case 2: return `${arr[0]} and ${arr[1]} like this`
+        case 3: return `${arr[0]}, ${arr[1]} and ${arr[2]} like this`
+        default: return `${arr[0]}, ${arr[1]} and ${arr.length-2} others like this`
     }
-    
-    return `${output} ${arr.length > 1 ? 'like' : 'likes' } this`
 }
