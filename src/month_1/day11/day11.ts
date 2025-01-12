@@ -10,39 +10,17 @@ You can find some examples in the test fixtures.
 */
 
 export function humanReadable(seconds:number):string {
-const HOUR = 3600;
-const MINUTE = 60;
-const MAXTIME = 359_999;
-let time = '';
 
-    function addLeadingZero (num: string): string {
-        if (num.length === 1) {
-            return "0" + num;
-        } else {
-            return num
-        }
-    }
+    const hrs = Math.floor(seconds / 3_600);
+    const mins = Math.floor(seconds % 3600 / 60);
+    const secs = Math.floor(seconds % 3600 % 60);
 
-    function calcSeconds (seconds:number) {
-        time += addLeadingZero(seconds.toString());
-    }
+    return [hrs, mins, secs]
+    .map((num) => {
+        return num < 10 ? `0${num}`: num.toString()
+    })
+    .join(":")
 
-    function calcMinutes (seconds:number) {
-        let minutes = Math.floor(seconds / MINUTE)
-        time+= addLeadingZero(minutes.toString())+ ":";
-        calcSeconds(seconds - (minutes * MINUTE))
-    }
-
-    function calcHours (seconds:number) {
-        let hours = Math.floor(seconds / HOUR )
-        time += addLeadingZero(hours.toString()) + ":";
-        calcMinutes(seconds - (hours * HOUR))
-    }
-
-    if (seconds >= MAXTIME) return '99:59:59' 
-
-    calcHours(seconds)
-    return time 
 }
 
   console.log('0', humanReadable(0))
