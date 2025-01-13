@@ -12,7 +12,7 @@ describe('day 13 tests', () => {
         "123456789012345678901234567860",
         "123456789012345678901234567890"]],
         ['*1',[]]
-    ])('returns %s for %s', (input, output) => {
+    ])('for %s returns %s', (input, output) => {
         expect(maskedNumber(input)).toEqual(output)
     })
 })
