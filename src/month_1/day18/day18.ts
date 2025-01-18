@@ -5,7 +5,7 @@
 Note: you will always receive a valid array containing a random assortment of direction letters ('n', 's', 'e', or 'w' only). It will never give you an empty array (that's not a walk, that's standing still!). 
  */
 
-export function isValidWalk(walk: string[]):any {
+export function isValidWalk(walk: string[]):boolean {
     
     if (walk.length !== 10) return false
 
@@ -24,3 +24,20 @@ export function isValidWalk(walk: string[]):any {
     return false
     
 }
+
+export function isValidWalkImproved(walk: string[]):boolean {
+    let dx = 0;
+    let dy = 0;
+    const dt = walk.length;
+    
+    for (var i = 0; i < walk.length; i++) {
+      switch (walk[i]) {
+        case 'n': dy--; break
+        case 's': dy++; break
+        case 'w': dx--; break
+        case 'e': dx++; break
+      }
+    }
+    
+    return dt === 10 && dx === 0 && dy === 0
+  }
