@@ -45,6 +45,7 @@ export function sudokuCheck (input:number[][]):boolean {
   }
 
   // 4. Checks each 3x3 square in a 2D array 
+  // TODO: this part needs completion
   const checkSquare = (arr:number[][]): boolean => {
     let countInvalid = 0;
     let testArr = [];
