@@ -9,3 +9,18 @@ Description
 Create a function that converts a string representing a time in the 24-hour format into a 12-hour format with an AM/PM suffix. The input string will be in the format 'HH:MM', where 'HH' is a two-digit hour, and 'MM' is a two-digit minute. The function should return a formatted string in the 12-hour format, e.g., '03:15 PM' or '12:00 AM'.
 */
 
+export function time (str:string):any {
+
+const timeArr:string[] = str.split(":");
+const suffix = +timeArr[0] > 11 ? 'PM' : 'AM'
+
+if (timeArr[0] === '00') {
+  timeArr[0] = `12`
+}
+
+if (+timeArr[0] > 12) {
+  timeArr[0] = `${+timeArr[0]-12}`.padStart(2,'0')
+}
+
+return `${timeArr[0]}:${timeArr[1]} ${suffix}`
+}
