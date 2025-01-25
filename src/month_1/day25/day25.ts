@@ -1,0 +1,11 @@
+/*
+https://dev.to/dpc/daily-javascript-challenge-js-36-convert-time-in-24-hour-format-to-12-hour-format-211e
+The Challenge
+Difficulty: Easy
+
+Topic: Time Conversion
+
+Description
+Create a function that converts a string representing a time in the 24-hour format into a 12-hour format with an AM/PM suffix. The input string will be in the format 'HH:MM', where 'HH' is a two-digit hour, and 'MM' is a two-digit minute. The function should return a formatted string in the 12-hour format, e.g., '03:15 PM' or '12:00 AM'.
+*/
+
