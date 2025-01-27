@@ -16,10 +16,11 @@ export default function longestSubString (str:string):number {
   let startIdx = 0;
   let longestStr = 0;
   if (strArr.length === 1) return 1
+  if (strArr.every((el) => el === strArr[0])) return 0
 
   for (let i = 0; i < strArr.length; i++ ) {
 
-    if (strArr[i] === strArr[i+1] || i === strArr.length) {
+    if (strArr[i] === strArr[i+1] || i+1 === strArr.length) {
       let curLength = i + 1 - startIdx;
       if (curLength > longestStr) longestStr = curLength;
       startIdx = i+1
