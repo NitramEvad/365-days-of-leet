@@ -8,11 +8,10 @@ export default function symetricalArr (arr:StringOrNumberArray):boolean {
 
   let result = true
 
-  arr.forEach((el, index:number) => {
-    if (el !== arr.pop()) result = false
-  })
+  let index = 0
+  while (result && arr[index]) {
+    arr[index] !== arr.pop() ? result = false : index++
+  }
 
   return result
 }
-
-console.log(symetricalArr([1,2,2,1,]))
