@@ -6,14 +6,13 @@ type StringOrNumberArray = (string | number )[];
 
 export default function symetricalArr (arr:StringOrNumberArray):boolean {
 
-  const reversedArr = [...arr].reverse();
   let result = true
 
   arr.forEach((el, index:number) => {
-    if (el === reversedArr[index]) result = false
+    if (el !== arr.pop()) result = false
   })
 
   return result
 }
 
-console.log(symetricalArr([1,2,2,1,3]))
+console.log(symetricalArr([1,2,2,1,]))
