@@ -6,8 +6,15 @@
 
 export function removeConsecutives (str:string):string {
 
-  const filteredArr = new Set(str.split(''));
-  return [...filteredArr].join('')
-}
+  let resultStr = str[0]
 
-console.log(removeConsecutives('aba'))
+  str
+  .split('')
+  .reduce((acc, cur) => {
+    if (cur !== acc) resultStr += cur
+    return cur
+  })
+  
+
+  return resultStr
+}
