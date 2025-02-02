@@ -9,7 +9,7 @@ describe('Day 2 removeConsecutives function tests', () => {
     ['abba','aba'],
     ['abbacb','abacb'],
     ['aabcdddddeffffg','abcdefg'],
-    ['aabbccddeeffffff','abcdefg'],
+    ['aabbccddeeffffff','abcdef'],
   ])('string %s should return %s', (input, output) => {
     expect(removeConsecutives(input)).toEqual(output)
   })
