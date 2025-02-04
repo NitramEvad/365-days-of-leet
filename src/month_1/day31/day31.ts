@@ -35,17 +35,11 @@ export default function delimiters(str:string):boolean {
       let startArr = cleanArr.slice(0,index)
       let endArr = cleanArr.slice(index+2)
       cleanArr = [...startArr, ...endArr]
-      
+
       index = 0;
     } else {
       index++
     }
   }
-
   return cleanArr.length === 0 ? true : false
-
 } 
-
-// console.log(delimiters('{{{()'))
-console.log(delimiters('a{bc{def}a}b()c[d]]  d'))
-// console.log(delimiters('az(ads(ab{df}f)fdf'))
