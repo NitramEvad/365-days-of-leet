@@ -10,6 +10,7 @@ describe('Day 31 exercise', () => {
     ['az(ads(})fdf)',false],
     ['az(ads(ab{df}}f)fdf)',false],
     ['az(ads(ab{df}f)fdf',false],
+    ['a{bc{def}a}b()c[d[  d',false],
   ])('%s should return %s', (input, output) => {
     expect(delimiters(input)).toEqual(output)
   })
