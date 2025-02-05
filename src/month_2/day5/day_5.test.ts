@@ -41,14 +41,14 @@ describe('Day 5 tests', () => {
     )).toBeFalsy
   })
 
-  it('should be FALSE for no winner...not sure about this', () => {
+  it('should be TRUE for no winner', () => {
     expect(ticTacToe(
       [
         ['X','O','X'],
         ['O','X','O'],
         ['O','X','X']
       ]
-    )).toBeFalsy
+    )).toBeTruthy
   })
 
   it('should be FALSE for a winner but too many turns', () => {

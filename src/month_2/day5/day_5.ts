@@ -11,26 +11,29 @@
  */
 
 export default function ticTacToe (arr:string[][]):boolean {
-  //  ['X','O','X'],['O','X','O'],['O','X','X']
-  // [0]12 , [0]36,
-  // ([0]48) , [3]57 
-  // [9]87 , [9]63
-  // [5]28 , [5]46
 
-  let winner = [];
-  let flatArr = [];
+  const winner:string[] = [];
+  const tally: {[key: string]: number} = {
+    O: 0,
+    X: 0,
+  }
 
+  // iterate top-left, middle, bottom-right
   for (let i = 0; i < 3; i++) {
+    
+    // tally total X's and O's
+    arr[i].forEach((el) => tally[el]++)
+
     let current = arr[i][i]
     
-    // chk across
+    // chk row
     let secondX = arr[i][(i+1)%3]
     let thirdX = arr[i][(i+2)%3]
     if (secondX === current && thirdX === current) {
       winner.push(current);
     }
     
-    // chk down
+    // chk column
     let secondY = arr[(i+1)%3][i]
     let thirdY = arr[(i+2)%3][i]
     if (secondY === current && thirdY === current) {
@@ -55,18 +58,11 @@ export default function ticTacToe (arr:string[][]):boolean {
     }
   }
   
-  if (winner.length === 0 || winner.length > 2) {
-    return false 
-  } else {
-    console.log('Winner:', winner)
-    return true
-  }
-  
+  return (
+    // fail if:
+    winner.length > 2 // more than two winning lines
+    || winner.length === 2 && winner[0] !== winner[1] // two winners
+    || Math.abs(tally['O'] - tally['X']) !== 1 // too many turns
+  ) ? false : true  
 
 }
-
-console.log(ticTacToe([
-  ['O','O','X'],
-  ['O','X','X'],
-  ['O','X','X']
-]))
