@@ -1,35 +1,63 @@
 import ticTacToe from "./day_5"
 describe('Day 5 tests', () => {
-  test.each([
-    [
+
+  it('should be TRUE for one winner and full board', () => {
+    expect(ticTacToe(
       [
         ['X','O','X'],
         ['O','X','O'],
         ['O','X','X']
-      ], true
-    ],
-    [
+      ]
+    )).toBeTruthy
+  })
+
+  it('should be TRUE for TWO winning lines with ONE winner on a full board ', () => {
+    expect(ticTacToe(
       [
         ['X','O','O'],
         ['X','O','O'],
         ['X','X','X']
-      ], true
-    ],
-    [
+      ]
+    )).toBeTruthy
+  })
+
+  it('should be FALSE for a full board with THREE winners ', () => {
+    expect(ticTacToe(
       [
         ['X','X','O'],
         ['X','X','O'],
         ['X','X','O']
-      ], false
-    ],
-    [
+      ]
+    )).toBeFalsy
+  })
+
+  it('should be FALSE for a board with TWO DIFFERENT winners ', () => {
+    expect(ticTacToe(
       [
-        ['X','O','O'],
-        ['','X','O'],
-        ['','O','X']
-      ], true
-    ],
-  ])('%s should give %s', (input,output) => {
-    expect(ticTacToe(input)).toEqual(output)
+        ['X','','O'],
+        ['X','','O'],
+        ['X','','O'],
+      ]
+    )).toBeFalsy
+  })
+
+  it('should be FALSE for no winner...not sure about this', () => {
+    expect(ticTacToe(
+      [
+        ['X','O','X'],
+        ['O','X','O'],
+        ['O','X','X']
+      ]
+    )).toBeFalsy
+  })
+
+  it('should be FALSE for a winner but too many turns', () => {
+    expect(ticTacToe(
+      [
+        ['X','','X'],
+        ['O','X','O'],
+        ['O','X','X']
+      ]
+    )).toBeFalsy
   })
 })
