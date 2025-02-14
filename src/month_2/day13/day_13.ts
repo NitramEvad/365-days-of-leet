@@ -1,4 +1,5 @@
 /**
+ * https://dev.to/dpc/daily-javascript-challenge-js-50-calculate-cumulative-sum-of-an-array-j35
  * The Challenge
  * Difficulty: Easy
  * 
