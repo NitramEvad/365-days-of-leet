@@ -11,7 +11,7 @@
 
 export function removeDuplicates (str:string):string {
   if (str.length === 0) return '';
-  let result = str[0];
+  let result = '';
   
   for (let i = 0; i < str.length; i++) {
     if (str[i] !== str[i+1]) {
@@ -22,4 +22,4 @@ export function removeDuplicates (str:string):string {
   return result
 }
 
-console.log(removeDuplicates('davidwill be innn thhhhhheeeee'))
+console.log(removeDuplicates('abcccdccdcef'))
