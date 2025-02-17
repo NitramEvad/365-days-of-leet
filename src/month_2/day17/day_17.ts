@@ -8,3 +8,24 @@
  * Description
  * Given an array of numbers, write a function that determines if the array can be rearranged into an arithmetic progression. An arithmetic progression is a sequence of numbers such that the difference between consecutive terms is constant.
  */
+
+export function rearrangeArr (arr: number[]): boolean {
+  
+  if (arr.length <= 2) return true
+
+  const incr = arr[1]-arr[0];
+  let element = 0;
+  let result = true; 
+  arr.sort((a,b) => a-b)
+
+  while (element < arr.length-1 && result) {
+    console.log(arr[element+1], arr[element], incr)
+    if (arr[element+1] - incr !== arr[element]) result = false
+    element++
+  }
+  
+  return result
+}
+
+console.log(rearrangeArr([1,3,5,4,7,9,3]))
+console.log(rearrangeArr([-3,-2,-1,0,1]))
