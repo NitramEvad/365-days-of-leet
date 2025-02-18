@@ -14,14 +14,14 @@ export function rearrangeArr (arr: number[]): boolean {
   if (arr.length <= 2) return true
 
   const incr = arr[1]-arr[0];
-  let element = 0;
+  let index = 0;
   let result = true; 
   arr.sort((a,b) => a-b)
 
-  while (element < arr.length-1 && result) {
-    console.log(arr[element+1], arr[element], incr)
-    if (arr[element+1] - incr !== arr[element]) result = false
-    element++
+  while (index < arr.length-1 && result) {
+    console.log(arr[index+1], arr[index], incr)
+    if (arr[index+1] - incr !== arr[index]) result = false
+    index++
   }
   
   return result
