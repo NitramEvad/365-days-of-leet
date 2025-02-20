@@ -16,19 +16,15 @@ export function sequence (arr:number[]):number|string {
   let variability;
   let result;
 
-  
-
   // tallies variability in to an object
   arr.sort((a,b) => a-b).reduce((acc:number, cur:number) => {
     let diff = cur - acc;
-    // variabilityObj[diff] ? variabilityObj[diff]++ : variabilityObj[diff] = 1;
     variabilityObj[diff] = (variabilityObj[diff] ? variabilityObj[diff]+=1 : 1)
     return acc = cur
   })
 
   // returns 0 if there is no or consistent variability
   if (Object.keys(variabilityObj).length < 2) {
-    // throw new Error("variabilityObj is empty");
     return 'No variability'
   }
   
