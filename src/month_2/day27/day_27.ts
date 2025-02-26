@@ -17,7 +17,7 @@ export function singles (arr:number[]):number[] {
   let index = 0;
   console.log(sortedArr)
 
-  while (index < sortedArr.length-1 &&  result.length < 2) { 
+  while (index < sortedArr.length &&  result.length < 2) { 
     if (sortedArr[index+1] !== sortedArr[index]) {
       result.push(sortedArr[index])
       index += 1
