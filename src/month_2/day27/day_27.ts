@@ -17,12 +17,8 @@ export function singles (arr:number[]):number[] {
   let index = 0;
 
   while (index < sortedArr.length &&  result.length < 2) { 
-    if (sortedArr[index+1] !== sortedArr[index]) {
-      result.push(sortedArr[index])
-      index += 1
-    } else {
-      index +=2
-    }
+    sortedArr[index+1] !== sortedArr[index] ? result.push(sortedArr[index]) : index++
+    index++
   }
 
   return result
