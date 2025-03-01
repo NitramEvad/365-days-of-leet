@@ -1,20 +1,17 @@
 /**
- * https://dev.to/dpc/daily-javascript-challenge-js-49-find-all-prime-factors-of-a-given-number-57h2
+ * https://dev.to/dpc/daily-javascript-challenge-js-71-vowel-counter-504o
  * 
  * The Challenge
- * Difficulty: Medium
  * 
- * Topic: Mathematics
+ * Difficulty: Easy
+ * 
+ * Topic: String Manipulation
  * 
  * Description
- * Write a function that receives a positive integer and returns an array containing all of its prime factors. Prime factors are the prime numbers that can be multiplied together to obtain the original number.
+ * Write a function that counts the number of vowels in a given string. Remember, the vowels are 'a', 'e', 'i', 'o', and 'u'. The function should be case-insensitive and count both uppercase and lowercase vowels.
  */
 
-export function primeFactor (num:number):number[] {
-
-  for (let i = 3; i < num; i++) {
-
-  }
+export function vowelCount (str:string):any {
   
-  return [1,2]
+  return str.match(/[aeiouAEIOU]/g)?.length || 0
 }
