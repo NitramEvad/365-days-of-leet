@@ -9,3 +9,23 @@
  * Description
  * Given an unsorted array of integers, find the length of the longest increasing subsequence.
  */
+
+export function increasingSubSeq (arr:number[]):number {
+  let longestArr = 0;
+  let testArr = 1;
+
+  for (let i = 0; i < arr.length-1; i++) {
+    if (arr[i+1] > arr[i]) {
+      testArr += 1
+      console.log(i, testArr, longestArr)
+    } else {
+      if (testArr > longestArr) longestArr = testArr
+      // testArr.length > longestArr.length
+      testArr = 1
+      console.log(i, testArr, longestArr)
+    }
+  }
+  return longestArr
+}
+
+increasingSubSeq([5,4,3,0,1,2,3,2,6,2,3,4,5,6,7,2,5,3])
