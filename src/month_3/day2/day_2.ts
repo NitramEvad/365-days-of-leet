@@ -14,15 +14,12 @@ export function increasingSubSeq (arr:number[]):number {
   let longestArr = 0;
   let testArr = 1;
 
-  for (let i = 0; i < arr.length-1; i++) {
+  for (let i = 0; i < arr.length; i++) {
     if (arr[i+1] > arr[i]) {
       testArr += 1
-      console.log(i, testArr, longestArr)
     } else {
       if (testArr > longestArr) longestArr = testArr
-      // testArr.length > longestArr.length
       testArr = 1
-      console.log(i, testArr, longestArr)
     }
   }
   return longestArr
