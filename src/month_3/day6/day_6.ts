@@ -9,7 +9,5 @@ Write a function that converts a given string representing a hexadecimal number 
  */
 
 export function hexToBinary (str:string):string {
-
   return parseInt(str, 16).toString(2)
-
 }
