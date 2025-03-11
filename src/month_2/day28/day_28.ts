@@ -20,25 +20,31 @@ export default function nestedPatterns(str: string): string {
 
   for (let i = 0; i < str.length; i++) {
     const char = str[i];
-
+    console.log('Start: ', i, currentNum, currentStr, stack)
+    
     if (!isNaN(Number(char))) {
+      console.log('A:')
       currentNum = currentNum * 10 + Number(char);
     } else if (char === '[') {
+      console.log('B:')
       stack.push(currentStr);
       stack.push(currentNum);
       currentStr = '';
       currentNum = 0;
     } else if (char === ']') {
+      console.log('C:')
       const num = stack.pop() as number;
       const prevStr = stack.pop() as string;
       currentStr = prevStr + currentStr.repeat(num);
     } else {
+      console.log('D:')
       currentStr += char;
     }
+    console.log('Finish: ', i, currentNum, currentStr, stack, '\n')
   }
-
+  
   return currentStr;
 }
 
 console.log(nestedPatterns('3[a2[c]]')); // Output: accaccacc
-console.log(nestedPatterns('2[abc]3[cd]ef')); // Output: abcabccdcdcdef
+// console.log(nestedPatterns('2[abc]3[cd]ef')); // Output: abcabccdcdcdef
