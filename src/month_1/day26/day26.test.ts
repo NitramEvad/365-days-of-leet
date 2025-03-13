@@ -1,6 +1,6 @@
 import longestSubString from "../day26/day26"
 
-describe('Day 27 tests', () => {
+describe('Day 26 tests', () => {
   test.each([
     ['a',1],
     ['aa',0],
