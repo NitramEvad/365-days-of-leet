@@ -17,10 +17,6 @@ type ElementArr = number[]
 
 export function consecutiveOnes (arr:ElementArr):number {
 
-  if (!arr.every(el => el === 0 || el === 1)) {
-    throw new Error("Input array must contain only binary values (0 or 1).")
-  }
-
   let longest = 0;
   let current = 0;
 
@@ -31,5 +27,3 @@ export function consecutiveOnes (arr:ElementArr):number {
   return longest
 }
 
-console.log(consecutiveOnes([0,0,1,0,1,0,1,1,1,1,1,0,1,0,0,0,1,1,1,1,0]))
-console.log(consecutiveOnes([0,1,0,0,0,1]))
