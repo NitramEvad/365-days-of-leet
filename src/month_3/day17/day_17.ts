@@ -25,5 +25,3 @@ export function sumOfDoubleDigits (num:number):number {
   }
   return current
 }
-
-sumOfDoubleDigits(10987654321)
