@@ -21,6 +21,7 @@ export function removeOverlaps (arr: number[][]):number[][] {
       i === arr.length-1 ? slimmedArr.push(arr[i]) : current = arr[i]
     } else {
       current = [current[0], arr[i][1]]
+      if (i === arr.length-1) slimmedArr.push(current)
     }
   }
   return slimmedArr
