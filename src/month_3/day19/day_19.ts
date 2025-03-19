@@ -19,7 +19,7 @@ export function bitGap (input: string | number):number {
   let largest = 0;
   let current = 0;
 
-  for (let i = 0; i < numConverted.length; i++) {
+  for (let i = numConverted.indexOf('1'); i < numConverted.lastIndexOf('1'); i++) {
     if (numConverted[i] === '0') {
       current +=1
       if (current > largest) largest = current
