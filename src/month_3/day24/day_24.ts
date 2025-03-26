@@ -27,4 +27,3 @@ export function nestedPatterns (str:string):string {
 
   return str;
 }
-console.log(nestedPatterns('abc efd ${5}[LLL MMMM ${5}[123 456 ] ] sfsdfsd ${5}[XXX YYY]dfgdfgfdg'))
