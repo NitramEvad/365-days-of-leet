@@ -12,33 +12,30 @@
 
 export function bracketBalancer (str:string):boolean {
 
-  const bracketsList = ['(','{','[', ')','}',']',]
-
   const brackets = {
     '(' : ')',
     '{' : '}',
     '[' : ']',
   }
+  const strArr = [...str].filter((value) => 
+    value in brackets || Object.values(brackets).includes(value))
+  
+  if (strArr.length === 0 || strArr.length % 2 !== 0) return false // early return if no brackets or uneven number
 
-  let stack:(string|undefined)[] = [];
+  let stack:(string)[] = [];
 
-  const strArr = [...str].filter((value) => bracketsList.includes(value))
+  for (let i = 0; i < strArr.length; i++) {
+    const element = strArr[i]
 
-  strArr.forEach((el) => {
-    if (brackets[el]) {
-      stack.push(el)
-      console.log(el, brackets[el], stack)
+    if (element in brackets) {
+      stack.push(element)
     } else {
-      let key:any = stack.pop
-      console.log(el, brackets[el], stack, brackets[key])
-      if (brackets[key] === el)
-        console.log('TRUE')
+      const lastOpenElement = stack.pop();
+      if (!lastOpenElement || brackets[lastOpenElement] !== element) {
+        return false;
+      }
     }
-    
-  })
-  console.log(strArr)
+  }
 
-  return true
+  return stack.length ? false : true
 }
-
-console.log(bracketBalancer('sfsfd(sf[dfd]sd)sdf{sdfsf}fs[df]fdsd'))
