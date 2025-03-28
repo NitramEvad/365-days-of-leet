@@ -6,7 +6,7 @@ describe('Day 25 tests', () => {
     [[2,0,4,0,8],64],
     [[0,1,2,3,4],24],
     [[5,0],5],
-  ])('%j should retrun %i', (input, output) => {
+  ])('%j should return %i', (input, output) => {
     expect(nonZeroProduct(input)).toEqual(output)
   })
 })
