@@ -30,4 +30,3 @@ export function secondLargest (input:number[]):number {
   return secondLargest
 }
 
-console.log(secondLargest([0,1,0,1,0,1]))
