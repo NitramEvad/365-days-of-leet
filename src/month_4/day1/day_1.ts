@@ -11,11 +11,15 @@ Write a function that finds the smallest positive integer that is missing from a
 
 export function smallestInt (arr: number[]): number {
   
-  let smallest = arr[0]
-  
-  arr.forEach((el) => {
-    if (el < smallest && el >= 0) smallest = el;
-  })
+  let present:number[] = [];
 
-  return smallest
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] >= 0) present[arr[i]] = arr[i]
+  }
+
+  for (let i = 0; i < present.length; i++) {
+    if (present[i] === undefined) return i
+  }
+
+  return 0
 }
