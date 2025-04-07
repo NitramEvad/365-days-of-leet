@@ -11,18 +11,21 @@ A happy number is a number which eventually reaches 1 when replaced repeatedly b
 
  */
 
+import { access } from "fs";
+
 export function happyNumber (input:number):boolean {
 
   const seen = new Set();
 
   while (input !== 1) {
     if (seen.has(input)) return false
-
     seen.add(input)
     
-    let number1 = Math.pow(+input.toString().charAt(0),2)
-    let number2 = Math.pow(+input.toString().charAt(1),2)
-    let total = number1 + number2;
+    let total = input
+      .toString()
+      .split('')
+      .map(Number)
+      .reduce((acc, cur) => acc + Math.pow(cur,2),0)
       
     input = total
   }
