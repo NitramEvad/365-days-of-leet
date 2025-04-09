@@ -11,3 +11,9 @@ Topic: Recursion
 Description
 Implement a function that calculates the factorial of a given positive integer using tail recursion. A factorial of a number n is the product of all positive integers less than or equal to n. The challenge is to implement this using a tail recursive approach.
  */
+
+export function factorial (input:number):number {
+  if (input === 0) return 1
+
+  return input * factorial(input-1)
+}
