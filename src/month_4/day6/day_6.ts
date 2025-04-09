@@ -11,7 +11,6 @@ A happy number is a number which eventually reaches 1 when replaced repeatedly b
 
  */
 
-import { access } from "fs";
 
 export function happyNumber (input:number):boolean {
 
