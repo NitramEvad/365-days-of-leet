@@ -11,3 +11,12 @@ Topic: String Manipulation
 Description
 Write a function that converts a given snake_case string to CamelCase string format. Snake case strings consist of words separated by underscores ('_'). Camel case strings are concatenated and start each new word with an uppercase letter (except the first word unless it starts with an uppercase letter).
  */
+
+export function snakeCase (input:string):any {
+  return input
+    .split("_")
+    .map(word => word && word[0].toUpperCase() + word.slice(1))
+    .join(" ")
+}
+
+console.log(snakeCase('abc__defg_higc'))
