@@ -11,3 +11,31 @@ Topic: Algorithms
 Description
 Create a function that takes an array of numbers and returns the mode (the number that appears most frequently). If there is more than one mode, return all of them in an array.
  */
+
+
+export function mode (input:number[]):number[] {
+
+  // tallies frequncy of each
+  // if (input.length === 1) return input
+
+  const tallyTable: { [key: number]: number } = {};
+  input.forEach(el => tallyTable[el] ? tallyTable[el] += 1 : tallyTable[el] = 1);
+
+  let results = new Set<number>([])
+  let maxFrequency = 0;
+
+  for (const key in tallyTable) {
+    if (tallyTable[key] >= maxFrequency) {
+      if (tallyTable[key] > maxFrequency) {
+        results.clear()
+        maxFrequency = tallyTable[key]
+      }
+      results.add(+key)
+    }
+  }
+
+  return Array.from(results)
+}
+
+console.log(mode([1,2,3,3,3,3,2,1]))
+console.log(mode([1,2,3,4,3,4,3,4,0]))
