@@ -1,13 +1,27 @@
 /**
-https://dev.to/dpc/daily-javascript-challenge-js-113-convert-infix-expression-to-postfix-38l2
-Daily JavaScript Challenge: Convert Infix Expression to Postfix
+Daily JavaScript Challenge: Calculate Maximum Subarray Sum
 Hey fellow developers! 👋 Welcome to today's JavaScript coding challenge. Let's keep those programming skills sharp!
 
 The Challenge
 Difficulty: Medium
 
-Topic: Expression Parsing
+Topic: Array
 
 Description
-Create a function that converts an arithmetic infix expression (contains +, -, *, /, and parentheses) to postfix notation.
+Given an integer array, find the contiguous subarray (containing at least one number) which has the largest sum and return that sum. Implement the function without using built-in functions that directly solve the problem.
  */
+
+
+export function firstContiguousSubArray (input:number[][]):number {
+  
+  return Math
+  .max(...input
+    .map((arr) => {
+      return arr.length 
+      ? arr.reduce((arr, cur) => {return arr+cur}) 
+      : 0
+    })
+  ) 
+}
+
+console.log(firstContiguousSubArray([[1,2,3],[2,2,3],[6,70,60],[5,4,3],[1,4,2]]))
