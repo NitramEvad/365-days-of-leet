@@ -12,16 +12,17 @@ Given an integer array, find the contiguous subarray (containing at least one nu
  */
 
 
-export function firstContiguousSubArray (input:number[][]):number {
-  
-  return Math
-  .max(...input
-    .map((arr) => {
-      return arr.length 
-      ? arr.reduce((arr, cur) => {return arr+cur}) 
-      : 0
-    })
-  ) 
+export function firstContiguousSubArray (input:number[]):number {
+
+  let currentSum = input[0];
+  let maxSum = input[0];
+
+  for (let i = 1; i < input.length; i++) {
+    currentSum = Math.max(input[i], currentSum + input[i])
+    maxSum = Math.max(maxSum, currentSum)
+    console.log(currentSum, maxSum)
+  }
+  return maxSum
 }
 
-console.log(firstContiguousSubArray([[1,2,3],[2,2,3],[6,70,60],[5,4,3],[1,4,2]]))
+
