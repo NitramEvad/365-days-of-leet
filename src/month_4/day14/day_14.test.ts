@@ -2,10 +2,9 @@ import { firstContiguousSubArray } from "./day_14";
 
 describe ('Day 14 tests', () => {
   test.each([
-    [[[1,2,3],[2,2,3],[6,70,60],[5,4,3],[1,4,2]],136],
-    [[[0,0,0],[0,1,2],[0]],3],
-    [[[10,11,12],[],[23,9]],33],
-    [[[],[],[]],0]
+    [[-1, 25, 10, -20, 5, 5, 5, 5, -100],35],
+    [[5,3,2,-40,15,10,10,-19,30],46],
+    [[5,3,2,-40,15,10,10,-59,39],39],
   ])('expect "%j" to equal "%j"', (input,output) => {
     expect(firstContiguousSubArray(input)).toEqual(output)
   })
