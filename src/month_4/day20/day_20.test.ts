@@ -1,5 +1,5 @@
 import { removeConsecutiveDuplicates } from './day_20'
-describe ('Day 19 tests', () => {
+describe ('Day 20 tests', () => {
   test.each([
     ['abcdddefggghhhi', 'abcdefghi'],
     ['abcdddefggghhhijjjjj', 'abcdefghij'],
