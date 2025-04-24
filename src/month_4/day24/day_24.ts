@@ -9,11 +9,11 @@ Given an array of even length, shuffle its elements such that the first element 
  */
 
 export function shuffle (input:(number|string)[]):(number|string)[] {
+
+  if (input.length % 2 !== 0) throw new Error("Input must be an even length")
+
   for (let i = 0; i < input.length; i += 2) {
-    const first = input[i];
-    const second = input[i+1];
-    input[i] = second;
-    input[i+1] = first;
+    [input[i], input[i + 1]] = [input[i + 1], input[i]]
   }
 
   return input
