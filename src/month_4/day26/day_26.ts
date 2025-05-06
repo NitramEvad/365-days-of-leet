@@ -16,6 +16,7 @@ export function longestCommonPrefix (input: string[]):any  {
   // iterate letters
   for (let i = 0; i < input[0].length; i++) {
     prefix.push(input[0][i])
+
       // iterate elements of array
     for (let j = 0; j < input.length; j++) {
       if (input[j][i] !== prefix[i]) {
@@ -25,8 +26,8 @@ export function longestCommonPrefix (input: string[]):any  {
     }
   }
 
-  return 'xyz'
+  return prefix.join('')
 
 }
 
-console.log(longestCommonPrefix(['cbcaxyz', 'cb123', 'cbcdnpo', 'cbcdeabbba']))
+console.log(longestCommonPrefix(['cbcaxyz', 'xcb123', 'cbcdnpo', 'cbcdeabbba']))
