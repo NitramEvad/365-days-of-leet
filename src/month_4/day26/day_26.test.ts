@@ -1,16 +1,9 @@
-/**
-The Challenge
-Difficulty: Medium
+import { longestCommonPrefix } from "./day_26";
 
-Topic: String Manipulation
-
-Description
-Write a function that takes a string as input and returns the first word that does not repeat in the sentence. Words are sequences of characters separated by space, and the function should be case-sensitive.
- */
-
-
-export function firstNonRepeatingWord (input: string):string  {
-
-  return 'abc'
-
-}
+describe('Day 26 tests', () => {
+  test.each([
+    [['cbcaxyz', 'cb123', 'cbcdnpo', 'cbcdeabbba'],['cb']]
+  ])('expect "%s" to return "%s"', (input,output) => {
+    expect(longestCommonPrefix(input)).toEqual(output)
+  })
+})
