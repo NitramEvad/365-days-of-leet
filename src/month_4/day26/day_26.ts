@@ -29,5 +29,3 @@ export function longestCommonPrefix (input: string[]):any  {
   return prefix.join('')
 
 }
-
-console.log(longestCommonPrefix(['cbcaxyz', 'xcb123', 'cbcdnpo', 'cbcdeabbba']))
