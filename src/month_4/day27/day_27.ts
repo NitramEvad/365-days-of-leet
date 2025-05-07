@@ -11,6 +11,18 @@ Write a function that takes a string as input and returns the first word that do
 
 export function firstNonRepeatingWord (input: string):string  {
 
-  return 'abc'
+  const inputWords = input.split(' ')
+  let count = 1;
 
+  for (let i = 0; i < inputWords.length; i++) {
+    if (inputWords[i] !== inputWords[i+1] && count < 2) {
+      return inputWords[i]
+    } else if (inputWords[i] !== inputWords[i+1]) {
+      count = 1;
+    } else {
+      count ++
+    }
+  }
+
+return ''
 }
