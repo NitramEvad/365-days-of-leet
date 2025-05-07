@@ -11,6 +11,19 @@ Implement a string compression function that uses the counts of repeated charact
 
 export function stringCompression (input: string):string  {
 
-  return 'a2b1c5a3'
+  let returnStr = '';
+  let count = 1;
+  let current = input[0]
 
+  for (let i = 1; i <= input.length; i++) {
+    if (input[i] === current) {
+      count += 1
+    } else {
+      returnStr += `${current}${count}`
+      current = input[i]
+      count = 1
+    }
+  }
+
+  return returnStr
 }
