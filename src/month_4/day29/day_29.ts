@@ -11,6 +11,9 @@ Given an array that represents an arithmetic progression with one missing elemen
 
 export function missingEl (input: number[]):number  {
 
-  return 12
+  const elements = input.length; 
+  const sumActual = input.reduce((acc, num) => acc + num, 0); 
+  const sumExpected = (input[0] + input[elements-1]) * ((elements + 1) / 2); 
 
+  return sumExpected - sumActual
 }
