@@ -2,10 +2,10 @@
 The Challenge
 Difficulty: Medium
 
-Topic: Array Manipulation
+Topic: Number Theory
 
 Description
-Given an array of integers, your task is to find the majority element. The majority element is the element that appears more than ⌊ n/2 ⌋ times in the array, where n is the length of the array. You can assume that the array always has a majority element.
+Write a function that calculates the sum of all prime numbers less than or equal to a given number n. The function should return the sum as an integer. Prime numbers are numbers greater than 1 that have no divisors other than 1 and themselves.
  */
 
 
