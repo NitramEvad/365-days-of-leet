@@ -1,11 +1,11 @@
 /**
 The Challenge
-Difficulty: Medium
+Difficulty: Easy
 
-Topic: Array Manipulation
+Topic: Strings
 
 Description
-Given an array of integers, your task is to find the majority element. The majority element is the element that appears more than ⌊ n/2 ⌋ times in the array, where n is the length of the array. You can assume that the array always has a majority element.
+Create a function that counts the number of unique characters in a given string. The function should be case-sensitive, meaning that 'a' and 'A' are considered different characters.
  */
 
 
