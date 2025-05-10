@@ -9,8 +9,17 @@ Create a function that counts the number of unique characters in a given string.
  */
 
 
-export function x (input: string):string  {
+export function uniqueCount1 (input: string):number  {
 
-  return 'a2b1c5a3'
+  let unique:string[] = []
 
+  input
+    .split('')
+    .forEach(el => !unique.includes(el) && unique.push(el))
+
+  return unique.length
+}
+
+export function uniqueCount2 (input: string):number  {
+  return new Set(input).size
 }
