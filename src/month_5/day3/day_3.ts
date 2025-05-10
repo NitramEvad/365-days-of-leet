@@ -2,15 +2,22 @@
 The Challenge
 Difficulty: Medium
 
-Topic: Array Manipulation
+Topic: Data Structures
 
 Description
-Given an array of integers, your task is to find the majority element. The majority element is the element that appears more than ⌊ n/2 ⌋ times in the array, where n is the length of the array. You can assume that the array always has a majority element.
+Write a function that takes an array as input and returns an object mapping each element to its frequency in the array.
  */
 
 
-export function x (input: string):string  {
+export function arrayMapping<T> (input: T[]):Record<string, number>  {
 
-  return 'a2b1c5a3'
+  const output: Record<string, number> = {};
 
+  input.forEach(el => {
+    const key = String(el);
+    output[key] = (output[key] || 0) + 1
+  });
+
+  return output
 }
+
