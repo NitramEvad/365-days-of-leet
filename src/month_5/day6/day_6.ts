@@ -1,11 +1,11 @@
 /**
 The Challenge
-Difficulty: Medium
+Difficulty: Easy
 
-Topic: Array Manipulation
+Topic: String Manipulation
 
 Description
-Given an array of integers, your task is to find the majority element. The majority element is the element that appears more than ⌊ n/2 ⌋ times in the array, where n is the length of the array. You can assume that the array always has a majority element.
+Given a string, reverse the order of words in the string. A word is defined as a sequence of non-space characters. The words in the input string will be separated by at least one space. You need to return a string that joins the words with a single space in the reversed order. Ensure to trim any leading or trailing spaces from the input before processing.
  */
 
 

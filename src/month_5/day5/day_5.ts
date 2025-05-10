@@ -2,10 +2,10 @@
 The Challenge
 Difficulty: Medium
 
-Topic: Array Manipulation
+Topic: Object Manipulation
 
 Description
-Given an array of integers, your task is to find the majority element. The majority element is the element that appears more than ⌊ n/2 ⌋ times in the array, where n is the length of the array. You can assume that the array always has a majority element.
+Given a deeply nested object, write a function that returns a new flattened object where each key is a path to the value in the original object using dot notation. You should not use any external libraries, only pure JavaScript.
  */
 
 
