@@ -9,8 +9,23 @@ Write a function that calculates the sum of all prime numbers less than or equal
  */
 
 
-export function x (input: string):string  {
+export function primeAgen (input: number):number  {
 
-  return 'a2b1c5a3'
+// 2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97
+  let sum = 0
 
+  for (let i = 2; i <= input; i++) {
+    let isPrime:boolean = true
+    for (let j = 2; j < i; j++) {
+      if (i % j === 0) {
+        isPrime = false
+        break
+      }
+    }
+    if (isPrime) {
+      sum += i
+    }
+  }
+
+  return sum
 }
