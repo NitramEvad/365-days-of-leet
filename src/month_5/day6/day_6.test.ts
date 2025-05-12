@@ -1,9 +1,9 @@
-import { x } from "./day_6";
+import { reverseWords } from "./day_6";
 
 describe('Day 6 tests', () => {
   test.each([
-    ['aabcccccaaa','a2b1c5a3'],
+    ['hello my name is david','david is name my hello'],
   ])('expect "%s" to return "%s"', (input,output) => {
-    expect(x(input)).toEqual(output)
+    expect(reverseWords(input)).toEqual(output)
   })
 })
