@@ -9,8 +9,6 @@ Given a string, reverse the order of words in the string. A word is defined as a
  */
 
 
-export function x (input: string):string  {
-
-  return 'a2b1c5a3'
-
+export function reverseWords (input: string):string  {
+  return input.trim().split(' ').reverse().join(' ')
 }
