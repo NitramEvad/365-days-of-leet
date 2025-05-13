@@ -9,8 +9,12 @@ Create a function to determine if a given year is a leap year. A year is a leap 
  */
 
 
-export function x (input: string):string  {
+export function isLeapYear (input: number):boolean  {
 
-  return 'a2b1c5a3'
+  const criteria1 = input % 4 === 0;
+  const criteria2 = input % 100 !== 0;
+  const criteria3 = input % 400 === 0;
+
+  return criteria1 && (criteria2 || criteria3)
 
 }
