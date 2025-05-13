@@ -13,6 +13,7 @@ describe('Day 4 tests', () => {
     [3,false],
     [24,false],
     [26,false],
+    [101,false],
   ])('expect %i to return %s', (input,output) => {
     expect(happyNumber(input)).toEqual(output)
   })
