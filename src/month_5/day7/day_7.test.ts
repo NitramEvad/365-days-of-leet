@@ -1,6 +1,6 @@
 import { isLeapYear } from "./day_7";
 
-describe('Day 4 tests', () => {
+describe('Day 7 tests', () => {
   test.each([
     [4,true],
     [400,true],
