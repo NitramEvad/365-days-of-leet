@@ -11,22 +11,20 @@ Implement a function to determine if a number is a happy number. A happy number 
 
 export function happyNumber (input: number):boolean  {
 
-  let processed = 0;
+  let processed = input;
+  let tried:Set<number> = new Set();
 
-  while (processed !== 1) {
-    processed = input
-      .toString()
-      .split('')
-      .reduce((acc, cur) => {
-        console.log(acc,cur)
-        return acc + (Number(cur) * Number(cur))
-      },0)
+  while (processed !== 1 && processed !== 0) {
+    if (tried.has(processed)) return false;
 
-  console.log(processed)
+    tried.add(processed)
+
+    processed = processed
+      .toString() // '234'
+      .split('') // ['2', '3', '4']
+      .map(el => Number(el) * Number(el)) // [4, 9, 16]
+      .reduce((acc, cur) => acc+cur,0)
   }
   
   return true
-
 }
-
-console.log(happyNumber(23)) // 2,3=4+9=13; 1,3=1+9=10; 1,0=1+0=1
