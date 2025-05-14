@@ -9,8 +9,22 @@ Write a JavaScript function to determine the length of the longest sequence of c
  */
 
 
-export function x (input: string):string  {
+export function binaryLength (input: number):number  {
 
-  return 'a2b1c5a3'
+  const binary = [...input.toString(2)];
+  const zeroArr:Set<number> = new Set();
 
+  let tally = 0;
+
+  for (let i = 0; i < binary.length; i++) {
+    if (binary[i] === '0') {
+      if (i === binary.length) break
+      tally += 1;
+    } else {
+      zeroArr.add(tally)
+      tally = 0
+    }
+  }
+
+  return Math.max(...zeroArr)
 }
