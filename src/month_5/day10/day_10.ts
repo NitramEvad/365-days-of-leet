@@ -29,5 +29,3 @@ export function longestSubString(input: string): number {
 
   return longest;
 }
-
-console.log(longestSubString('thequickbbrownffoxxxxxjumpsssovrrrerthelazydoggg'))
