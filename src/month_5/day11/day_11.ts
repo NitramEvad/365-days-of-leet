@@ -12,3 +12,5 @@ Write a JavaScript function to determine the length of the longest sequence of c
 export function binaryGap (input: number):number {
   return 5
 }
+
+console.log(binaryGap(25))
